@@ -17,7 +17,7 @@ function HomePage() {
             </div>
             <div className="flex justify-center mt-10">
                 <Link href="/score">
-                    <a>Go to score page</a>
+                    Go to score page
                 </Link>
             </div>
         </div>

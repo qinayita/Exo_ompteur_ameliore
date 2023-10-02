@@ -22,7 +22,7 @@ export default function RootLayout({
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
             <link rel="stylesheet" href="./styles.css" />
-            <title>{React.createElement("title", null, metadata.title)}</title>
+            <title>{metadata.title}</title>
         </head>
         <body className={inter.className}>
         {children}

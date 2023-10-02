@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Counter from "./counter";
-import { useNavigation } from "next";
-
-
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { Score } from './score';
 
 export default function Home() {
     const [score, setScore] = useState(0);
-    const navigation = useNavigation();
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
     useEffect(() => {
-        if (navigation.query.score) {
-            setScore(parseInt(navigation.query.score, 10));
+        if (searchParams.get("score")) {
+            setScore(parseInt(searchParams.get("score") as string, 10));
+        }
+    }, [searchParams.get("score")]);
 
     return (
         <div>
@@ -19,7 +21,7 @@ export default function Home() {
                 <Counter />
             </div>
             <div className="flex justify-center mt-10">
-                <Score score={score} />
+                <Score />
             </div>
         </div>
     );

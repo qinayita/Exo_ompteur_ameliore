@@ -1,23 +1,24 @@
 "use client";
 import React, { useState } from "react";
 import Counter from "./components/counter";
-import { useNavigation } from "next";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Link from "next/link";
-import Score from "./components/score";
+import { Score } from './components/score';
 import Home from "./components/home";
 
 function HomePage() {
-    const navigation = useNavigation();
-
-    if (navigation.query.score) {
-        return <Score score={navigation.query.score} />;
-    }
+    const router = useRouter();
 
     return (
         <div>
             <div className="flex justify-center text-3xl font-semibold bg-blue-200">Home page </div>
             <div className="flex justify-center mt-10">
                 <Counter />
+            </div>
+            <div className="flex justify-center mt-10">
+                <Link href="/score" legacyBehavior>
+                    <a>Go to score page</a>
+                </Link>
             </div>
         </div>
     );

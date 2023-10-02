@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useNavigation } from "next";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 export default function Counter() {
     const [counterValue, setCounterValue] = useState(0);
-    const navigation = useNavigation();
+    const router = useRouter();
 
     function handleAdd() {
         setCounterValue(counterValue + 1);
@@ -17,7 +17,7 @@ export default function Counter() {
 
     function handleValidate() {
         const newUrl = `/${counterValue}`;
-        navigation.push(newUrl);
+        router.push(newUrl);
     }
 
     return (

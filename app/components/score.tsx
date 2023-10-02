@@ -1,10 +1,10 @@
 "use client" ;
 import React, { useState } from "react";
-import { useNavigation } from "next";
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-const Score = () => {
+export const Score = () => {
     const [score, setScore] = useState(0);
-    const navigation = useNavigation();
+    const router = useRouter();
 
     return (
         <div>
@@ -14,12 +14,7 @@ const Score = () => {
             <br />
             <button onClick={() => setScore(score - 1)}>- 1</button>
             <br />
-            <button onClick={() => navigation.back()}>Retour</button>
+            <button onClick={() => router.back()}>Retour</button>
         </div>
     );
 };
-
-export default Score;
-
-
-

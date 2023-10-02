@@ -1,3 +1,4 @@
+import React from "react";
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -16,10 +17,17 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+        <head>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+            <link rel="stylesheet" href="./styles.css" />
+            <title>{React.createElement("title", null, metadata.title)}</title>
+        </head>
         <body className={inter.className}>
         {children}
         </body>
         </html>
-    )
+    );
 }
 

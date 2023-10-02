@@ -16,7 +16,7 @@ function HomePage() {
                 <Counter />
             </div>
             <div className="flex justify-center mt-10">
-                <Link href="/score" legacyBehavior>
+                <Link href="/score">
                     <a>Go to score page</a>
                 </Link>
             </div>

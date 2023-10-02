@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { ScorePage } from './scorePage';
 
 export default function Counter() {
     const [counterValue, setCounterValue] = useState(0);
@@ -16,7 +17,7 @@ export default function Counter() {
     }
 
     function handleValidate() {
-        const newUrl = `/${counterValue}`;
+        const newUrl = `/score/${counterValue}`;
         router.push(newUrl);
     }
 

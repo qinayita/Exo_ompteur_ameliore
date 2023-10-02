@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export const ScorePage = () => {
     const [score, setScore] = useState(0);

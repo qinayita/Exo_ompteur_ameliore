@@ -1,7 +1,7 @@
 "use client";
-
 import React, { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import Link from "next/link";
 import { ScorePage } from './scorePage';
 
 export default function Counter() {
@@ -36,12 +36,14 @@ export default function Counter() {
             </button>
             <br />
             <br />
-            <button
-                className="w-52 h-10 mx-2 bg-green-200"
-                onClick={handleValidate}
-            >
-                Valider
-            </button>
+            <Link href={`/score/${counterValue}`}>
+                <button
+                    className="w-52 h-10 mx-2 bg-green-200"
+                    onClick={handleValidate}
+                >
+                    Valider
+                </button>
+            </Link>
         </div>
     );
 }
